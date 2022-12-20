@@ -4,7 +4,9 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        name: "ga_electron_forge"
+      },
     },
     {
       name: '@electron-forge/maker-zip',
@@ -19,4 +21,16 @@ module.exports = {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "hpm",
+          name: "electron-ga_electron_forge-example"
+        },
+        draft: true
+      }
+    }
+  ]
 };
